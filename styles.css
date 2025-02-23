@@ -1,0 +1,57 @@
+body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5dc; 
+    color: #333; 
+    font-size: 1em; 
+}
+
+header {
+    background: #fff;
+    color: #333;
+    padding: 1rem 0;
+    text-align: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 1.25em; 
+}
+
+nav ul li a {
+    color: #007BFF; 
+    text-decoration: none;
+    font-size: 1em; 
+}
+
+main {
+    padding: 20px;
+    font-size: 1em; 
+}
+
+.card {
+    margin-bottom: 20px;
+    padding: 15px;
+    border: 1px solid #007BFF; 
+    border-radius: 5px;
+    background: #fff; 
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    font-size: 1em; 
+}
+
+h2 {
+    color: #007BFF; 
+    font-size: 1.5em; 
+}
+
+footer {
+    text-align: center;
+    padding: 10px 0;
+    background: #fff;
+    color: #333;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+    box-shadow: 0 -1px 5px rgba(0, 0, 0, 0.1);
+    font-size: 1em; 
+}
+
