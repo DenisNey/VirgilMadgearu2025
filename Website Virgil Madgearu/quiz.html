@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Virgil Madgearu</title>
+    <link rel="stylesheet" href="styles.css"> 
+</head>
+<body>
+    <header>
+        <h1>QUIZ</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Acasă</a></li>
+                <li><a href="biografie.html">Biografie</a></li>
+                <li><a href="politician.html">Politician</a></li>
+                <li><a href="conceptie.html">Concepția Economică</a></li>
+                <li><a href="problema.html">Problema Agrară</a></li>
+                <li><a href="institutii.html">Instituții</a></li>
+                <li><a href="bibliografie.html">Bibliografie</a></li>
+                <li><a href="quiz.html">Quiz</a></li>
+                <li><a href="opere.html">Opere</a></li>
+            </ul>
+        </nav>
+    </header>
+    
+    <div class="quiz-container">
+        <h1>Quiz: Virgil Madgearu</h1>
+        
+        <div class="question">
+            1. În ce oraș s-a născut Virgil Madgearu?
+        </div>
+        <ul class="answers">
+            <li><input type="radio" name="q1" value="Galați"> Galați</li>
+            <li><input type="radio" name="q1" value="București"> București</li>
+            <li><input type="radio" name="q1" value="Iași"> Iași</li>
+        </ul>
+
+        <div class="question">
+            2. Ce titlu a obținut Virgil Madgearu la Leipzig?
+        </div>
+        <ul class="answers">
+            <li><input type="radio" name="q2" value="Doctor"> Doctor</li>
+            <li><input type="radio" name="q2" value="Master"> Master</li>
+            <li><input type="radio" name="q2" value="Licențiat"> Licențiat</li>
+        </ul>
+
+        <div class="question">
+            3. În ce an a devenit profesor la Academia de Înalte Studii Comerciale și Industriale din București?
+        </div>
+        <ul class="answers">
+            <li><input type="radio" name="q3" value="1916"> 1916</li>
+            <li><input type="radio" name="q3" value="1920"> 1920</li>
+            <li><input type="radio" name="q3" value="1925"> 1925</li>
+        </ul>
+
+        <div class="question">
+            4. Care dintre următoarele publicații a fost scrisă de V. Madgearu?
+        </div>
+        <ul class="answers">
+            <li><input type="radio" name="q4" value="Agrarianism, Capitalism, Imperialism"> Agrarianism, Capitalism, Imperialism</li>
+            <li><input type="radio" name="q4" value="Lumea Economică"> Lumea Economică</li>
+            <li><input type="radio" name="q4" value="Economie și Politică"> Economie și Politică</li>
+        </ul>
+
+        <div class="question">
+            5. Cum consideră Madgearu că ar trebui dezvoltată agricultura românească?
+        </div>
+        <ul class="answers">
+            <li><input type="radio" name="q5" value="Caracter intensiv"> Caracter intensiv</li>
+            <li><input type="radio" name="q5" value="Caracter extensiv"> Caracter extensiv</li>
+            <li><input type="radio" name="q5" value="Caracter mixt"> Caracter mixt</li>
+        </ul>
+
+        <div class="question">
+            6. Ce curent economic este Virgil Madgearu considerat exponent?
+        </div>
+        <ul class="answers">
+            <li><input type="radio" name="q6" value="Socialism"> Socialism</li>
+            <li><input type="radio" name="q6" value="Țărănism"> Țărănism</li>
+            <li><input type="radio" name="q6" value="Capitalism"> Capitalism</li>
+        </ul>
+
+        <div class="question">
+            7. Ce funcție a ocupat Madgearu în perioada 1929-1930?
+        </div>
+        <ul class="answers">
+            <li><input type="radio" name="q7" value="Ministru de Finanțe"> Ministru de Finanțe</li>
+            <li><input type="radio" name="q7" value="Ministru al Agriculturii"> Ministru al Agriculturii</li>
+            <li><input type="radio" name="q7" value="Ministru de Industrie și Comerț"> Ministru de Industrie și Comerț</li>
+        </ul>
+
+        <div class="question">
+            8. În ce an s-a născut Virgil Madgearu?
+        </div>
+        <ul class="answers">
+            <li><input type="radio" name="q8" value="1887"> 1887</li>
+            <li><input type="radio" name="q8" value="1890"> 1890</li>
+            <li><input type="radio" name="q8" value="1895"> 1895</li>
+        </ul>
+
+        <div class="question">
+            9. Care a fost una dintre lucrările importante publicate de V. Madgearu?
+        </div>
+        <ul class="answers">
+            <li><input type="radio" name="q9" value="Regimul agrar"> Regimul agrar</li>
+            <li><input type="radio" name="q9" value="Economia românească"> Economia românească</li>
+            <li><input type="radio" name="q9" value="Agricultura românească"> Agricultura românească</li>
+        </ul>
+
+        <button class="submit-btn" onclick="submitQuiz()">Trimite</button>
+        
+        <div class="result" id="result"></div>
+    </div>
+
+    <script>
+        function submitQuiz() {
+            const correctAnswers = {
+                q1: 'Galați',
+                q2: 'Doctor',
+                q3: '1916',
+                q4: 'Agrarianism, Capitalism, Imperialism',
+                q5: 'Caracter intensiv',
+                q6: 'Țărănism',
+                q7: 'Ministru de Finanțe',
+                q8: '1887',
+                q9: 'Regimul agrar'
+            };
+
+            let score = 0;
+
+            for (let question in correctAnswers) {
+                const answer = document.querySelector(`input[name="${question}"]:checked`);
+                if (answer && answer.value === correctAnswers[question]) {
+                    score++;
+                }
+            }
+
+            document.getElementById('result').textContent = `Ai răspuns corect la ${score} din 9 întrebări.`;
+        }
+    </script>
+</body>
+</html>
